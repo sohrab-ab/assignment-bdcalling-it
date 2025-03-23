@@ -102,70 +102,16 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(width: 10,),
-              Container(
-                height: 50,
-                width: 80,
-                decoration: BoxDecoration(
-                    color: Color(0xff221821),
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                child: Center(
-                  child: CustomText(
-                    text: "Action",
-                    color: Colors.white60,
-
-                  ),
-                ),
+              categorySectionButton(text: "Action"),
+              SizedBox(width: 10,),
+              categorySectionButton(
+                  text: "Anime",
+                border: Border.all(color: Colors.black, width: 1.5),
               ),
               SizedBox(width: 10,),
-              Container(
-                height: 50,
-                width: 80,
-                decoration: BoxDecoration(
-                    color: Color(0xff221821),
-                    borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.black, width: 1.5)
-                ),
-                child: Center(
-                  child: CustomText(
-                    text: "Anime",
-                    color: Colors.white60,
-
-                  ),
-                ),
-              ),
+              categorySectionButton(text: "Sci-fi"),
               SizedBox(width: 10,),
-              Container(
-                height: 50,
-                width: 80,
-                decoration: BoxDecoration(
-                    color: Color(0xff221821),
-                    borderRadius: BorderRadius.circular(10)
-                ),
-                child: Center(
-                  child: CustomText(
-                    text: "Sci-fi",
-                    color: Colors.white60,
-
-                  ),
-                ),
-              ),
-              SizedBox(width: 10,),
-              Container(
-                height: 50,
-                width: 80,
-                /*decoration: BoxDecoration(
-                    color: Color(0xff221821),
-                    borderRadius: BorderRadius.circular(10)
-                ),*/
-                child: Center(
-                  child: CustomText(
-                    text: "Thriller",
-                    color: Colors.white60,
-
-                  ),
-                ),
-              ),
+              categorySectionButton(text: "Thriller"),
             ],
           ),
         ),
@@ -175,6 +121,25 @@ class HomeView extends GetView<HomeController> {
         ),
         contentBottomSpace(),
       ],
+    );
+  }
+
+  Widget categorySectionButton({text, border}){
+    return Container(
+      height: 50,
+      width: 80,
+      decoration: BoxDecoration(
+          color: Color(0xff221821),
+          borderRadius: BorderRadius.circular(10),
+          border: border
+      ),
+      child: Center(
+        child: CustomText(
+          text: text ?? "",
+          color: Colors.white60,
+
+        ),
+      ),
     );
   }
 
@@ -189,74 +154,21 @@ class HomeView extends GetView<HomeController> {
           height: 140,
           child: Row(
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_1.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Yes I Do",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-                ),
+              content(
+                image: "assets/images/image_1.png",
+                text: "Yes I Do",
               ),
               SizedBox(width: 12,),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_2.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Inside Out 2",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-                ),
+              content(
+                image: "assets/images/image_2.png",
+                text: "Inside Out 2",
               ),
               SizedBox(width: 12,),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_3.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Babylon",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-                ),
+              content(
+                image: "assets/images/image_3.png",
+                text: "Babylon",
               ),
+
             ],
           ),
         ),
@@ -276,52 +188,16 @@ class HomeView extends GetView<HomeController> {
           height: 140,
           child: Row(
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.only(right: 16),
-                        child: Image.asset(
-                          "assets/images/image_4.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Wednesday | Season - 1 | Episode - 3",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-                ),
+              content(
+                image: "assets/images/image_4.png",
+                text: "Wednesday | Season - 1 | Episode - 3",
               ),
               SizedBox(width: 12,),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_5.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Emily in Paris | Season - 1 | Episode - 1",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-                ),
+              content(
+                image: "assets/images/image_5.png",
+                text: "Emily in Paris | Season - 1 | Episode - 1",
               ),
+
             ],
           ),
         ),
@@ -340,86 +216,22 @@ class HomeView extends GetView<HomeController> {
         Container(
           height: 150,
           child: Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_6.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Double Love",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-
-                ),
+              content(
+                image: "assets/images/image_6.png",
+                text: "Double Love",
               ),
               SizedBox(width: 12,),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_7.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Text(
-                      "Sunita",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
-
-                    ),
-                  ],
-
-                ),
+              content(
+                image: "assets/images/image_7.png",
+                text: "Sunita",
               ),
               SizedBox(width: 12,),
-              Expanded(
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: Container(
-                        child: Image.asset(
-                          "assets/images/image_8.png",
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 8,),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            "Pokemon: detective Pikachu",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 12,
-                            ),
-
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-
-                ),
+              content(
+                image: "assets/images/image_8.png",
+                text: "Pokemon: detective Pikachu",
               ),
+
             ],
           ),
         ),
@@ -453,6 +265,28 @@ class HomeView extends GetView<HomeController> {
         ),
 
       ],
+    );
+  }
+
+  Widget content({image, text,}){
+    return Expanded(
+      child: Column(
+        children: [
+          Expanded(
+            child: Container(
+              child: Image.asset(
+                image
+              ),
+            ),
+          ),
+          SizedBox(height: 8,),
+          CustomText(
+            text: text,
+            fontSize: 12,
+          ),
+        ],
+
+      ),
     );
   }
 
