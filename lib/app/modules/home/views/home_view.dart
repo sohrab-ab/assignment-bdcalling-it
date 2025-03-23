@@ -111,7 +111,7 @@ class HomeView extends GetView<HomeController> {
               SizedBox(width: 10,),
               categorySectionButton(text: "Sci-fi"),
               SizedBox(width: 10,),
-              categorySectionButton(text: "Thriller"),
+              categorySectionButton(text: "Thriller", color: Color(0xff11161F), ),
             ],
           ),
         ),
@@ -124,12 +124,12 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Widget categorySectionButton({text, border}){
+  Widget categorySectionButton({text, color = const Color(0xff221821), border}){
     return Container(
       height: 50,
       width: 80,
       decoration: BoxDecoration(
-          color: Color(0xff221821),
+          color: color,
           borderRadius: BorderRadius.circular(10),
           border: border
       ),
